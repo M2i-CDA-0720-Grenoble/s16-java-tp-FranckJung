@@ -1,6 +1,4 @@
-import java.util.Random;
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class App
 {
@@ -11,27 +9,8 @@ public class App
         System.out.flush();
         
         Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-
-        int tailleCombinaison = 4;
-
-        //Genere un tableau de 4 chiffres aleatoire compris entre 0 et 5
-        int[] tableauNombresAleatoires = new int[tailleCombinaison];
-        for(int i = 0; i < tailleCombinaison; i++){
-            tableauNombresAleatoires[i] = random.nextInt(Couleur.values().length);
-        }
-        
-        //Genere un tableau de lettres correspondant aux couleurs des nombres du tableauNombresAleatoires
-        char[] tableauLettres = new char[tailleCombinaison];
-        for(int i = 0; i < tailleCombinaison; i++){
-            for (Couleur couleur : Couleur.values()) {
-                if (couleur.getCode() == tableauNombresAleatoires[i]) {
-                    tableauLettres[i] = couleur.getName();
-                }
-            }
-        }
-        //Transforme le tableau de lettres en string
-        String combinaison = new String(tableauLettres);
+        String combinaison = DataProvider.createCombinaison();
+       
         System.out.println(combinaison);
 
         String UserInput = "";
