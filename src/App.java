@@ -30,26 +30,26 @@ public class App
                 }
             }
         }
-        
-        System.out.println(Arrays.toString(tableauNombresAleatoires));
-        System.out.println(Arrays.toString(tableauLettres));
+        //Transforme le tableau de lettres en string
+        String combinaison = new String(tableauLettres);
+        System.out.println(combinaison);
 
-
-        // String UserInput = "";
-
-        // System.out.println("Veuillez entrer une combinaison de 4 lettres");
-        // while(!UserInput.equals(combinaison))
-        // {
-        //     UserInput = scanner.nextLine().trim();
-        //     if(UserInput.length() == combinaison.length()){
-        //         if(!UserInput.equals(combinaison)){
-        //             System.out.println("mauvaise combinaison");
-        //         }     
-        //     }else{
-        //         System.out.println("combinaison invalide");
-        //     }
-        // }
-        // System.out.print("Vous avez gagné !");
+        String UserInput = "";
+        System.out.println("Bienvenue dans le jeu du mastermind :");
+        System.out.println("Vous devez deviner la combinaison de 4 lettres (RVBJCM)");
+        System.out.println("Veuillez entrer une combinaison de 4 lettres");
+        while(!UserInput.equals(combinaison))
+        {
+            UserInput = scanner.nextLine().trim();
+            if(UserInput.length() == combinaison.length()){
+                if(!UserInput.equals(combinaison)){
+                    System.out.println("mauvaise combinaison");
+                }     
+            }else{
+                System.out.println("combinaison invalide");
+            }
+        }
+        System.out.print("Vous avez gagné !");
         scanner.close();
     }
 }
