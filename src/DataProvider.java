@@ -2,10 +2,10 @@ import java.util.Random;
 
 public class DataProvider 
 {
-    public static String createCombinaison()
+    public static final int TailleCombinaison = 4;
+
+	public static char[] createCombinaison()
     {
-        final int TailleCombinaison = 4;
-        
         //Genere un tableau de 4 chiffres aleatoires compris entre 0 et le nombre de couleurs
         Random random = new Random();
         int[] tableauNombresAleatoires = new int[TailleCombinaison];
@@ -22,9 +22,6 @@ public class DataProvider
                 }
             }
         }
-        //Transforme le tableau de lettres en string
-        String combinaison = new String(tableauLettres);
-
-        return combinaison;
+        return tableauLettres;
     }
 }
