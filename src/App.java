@@ -1,3 +1,4 @@
+
 public class App
 {
     // Cette méthode est appelée automatiquement au lancement de l'application
@@ -6,6 +7,11 @@ public class App
         System.out.print("\033[H\033[2J");   
         System.out.flush();
         
-        System.out.print("Hello, world!");
+        Game game = new Game();
+        
+        while(game.getIsRunning()){
+            game.update();
+        }
+      
     }
 }
